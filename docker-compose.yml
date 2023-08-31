@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:13.2
+    container_name: messenger_api_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_value:/var/lib/postgresql/data/
+    env_file:
+      - messenger_api/messenger_api/.env
+volumes:
+  db_value:
